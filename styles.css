@@ -52,3 +52,44 @@ html[data-theme='dark']{--bg:#10242b;--ink:#f6f2eb;--mute:#bac7c7;--line:#33535a
 .projects-section .project-card:nth-child(5){grid-column:1/-1;display:grid;grid-template-columns:.85fr 1.15fr}.projects-section .project-card:nth-child(5) .project-image{height:100%;min-height:340px}.projects-section .project-card:nth-child(5) .project-info{align-self:center}
 @media(max-width:920px){.projects-section .project-card:nth-child(5){display:block}.projects-section .project-card:nth-child(5) .project-image{height:260px;min-height:0}.method-steps{grid-template-columns:1fr}.method-steps article{min-height:0}}
 @media(max-width:720px){.school-brandmark>span{font-size:39px}.school-brandmark img{width:96px;height:96px}.method-steps article{padding:25px}.method-quote{padding:25px;font-size:17px}.crew-name{font-size:52px}}
+
+
+/* v4: skill-gallery after About. 3D depth uses CSS, not image-generated text. */
+.skills{overflow:hidden;position:relative;background:var(--paper)}
+.skills .section-head{max-width:870px}
+.tech-scene{height:380px;position:relative;overflow:hidden;border-radius:24px;background:radial-gradient(circle at 56% 42%,#244c59,#102c3a 55%,#091a24 100%);color:#f7ead5;display:flex;align-items:center;isolation:isolate;perspective:900px}
+.tech-scene::before{content:"";position:absolute;inset:-50%;background:repeating-radial-gradient(circle at 50% 50%,transparent 0 50px,rgba(247,218,165,.13) 51px,transparent 52px 88px);opacity:.33;transform:rotateX(52deg);pointer-events:none}
+.tech-scene-glow{position:absolute;inset:0;background:radial-gradient(circle at var(--gx,60%) var(--gy,40%),#e2b67948,transparent 32%);pointer-events:none;transition:background .12s}
+.tech-scene-heading{position:relative;z-index:2;padding:40px clamp(24px,4.5vw,70px);max-width:50%;display:grid;gap:18px}.tech-scene-heading strong{display:block;font:clamp(28px,3.5vw,52px)/1.18 Georgia,serif;letter-spacing:-.035em}.tech-scene-heading .eyebrow{color:#eaca9e}.tech-scene-sub{font-size:12px;color:#d3e0df;max-width:420px}
+.tech-intro-stats{position:absolute;bottom:20px;left:clamp(24px,4.5vw,70px);right:clamp(24px,4.5vw,70px);z-index:3;display:flex;justify-content:space-between;gap:12px;color:#cbd9d5;font-size:10px;letter-spacing:.14em}.tech-intro-stats b{color:#f3d0a1;font-size:18px;font-family:Georgia}
+.tech-orbit{width:420px;height:320px;position:absolute;right:7%;top:18px;transform-style:preserve-3d;transform:rotateX(var(--rx,13deg)) rotateY(var(--ry,-17deg));transition:transform .2s ease-out}
+.orbit-ring{position:absolute;border:1px solid #dfba8170;border-radius:50%;inset:38px 48px;box-shadow:0 0 20px #b98e5433;transform-style:preserve-3d}
+.orbit-ring.ring-a{transform:rotate(-18deg) rotateX(65deg)}.orbit-ring.ring-b{transform:rotate(49deg) rotateY(62deg)}.orbit-ring.ring-c{inset:0 60px;border-color:#ffffff35;transform:rotate(98deg) rotateX(60deg)}
+.orbit-center{position:absolute;inset:82px 146px;background:linear-gradient(145deg,#ecd19e,#956c41);border-radius:50%;display:grid;align-content:center;justify-items:center;color:#17313c;box-shadow:12px 18px 35px #030c17a0, inset -12px -12px 18px #674b2f55;transform:translateZ(40px)}.orbit-center b{font:60px Georgia,serif;letter-spacing:-.07em}.orbit-center small{font-size:9px;letter-spacing:.15em}
+.orbit-token{position:absolute;padding:8px 13px;border:1px solid #d5c9b688;border-radius:12px;background:#183b47ef;box-shadow:8px 13px 23px #0617238c;color:#f3eadb;backdrop-filter:blur(8px);font:700 12px 'DM Sans',sans-serif;transform:translateZ(80px);white-space:nowrap;animation:techFloat 6s ease-in-out infinite alternate}
+.orbit-token.o1{top:7%;left:14%}.orbit-token.o2{top:15%;right:0;animation-delay:-1.5s}.orbit-token.o3{top:60%;left:0;animation-delay:-.6s}.orbit-token.o4{bottom:0;right:13%;animation-delay:-2s}.orbit-token.o5{bottom:6%;left:27%;animation-delay:-3s}.orbit-token.o6{top:49%;right:-7%;animation-delay:-1s}
+@keyframes techFloat{to{transform:translate3d(0,-12px,80px)}}
+.tech-categories{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px;margin-top:22px;perspective:1200px}
+.tech-tile{position:relative;overflow:hidden;background:var(--bg);border:1px solid var(--line);padding:30px;min-height:245px;border-radius:16px;box-shadow:0 10px 30px #001d2910;transform:perspective(1200px) rotateX(var(--tx,0deg)) rotateY(var(--ty,0deg));transform-style:preserve-3d;transition:transform .17s ease,box-shadow .17s ease,border-color .2s}
+.tech-tile:hover,.tech-tile:focus-visible{border-color:var(--gold);box-shadow:0 22px 50px #10253022}
+.tech-tile:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--gx,45%) var(--gy,20%),color-mix(in srgb,var(--gold) 18%,transparent),transparent 50%);pointer-events:none}
+.tech-no{color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.13em;display:block;transform:translateZ(18px)}
+.tech-tile h3{font-size:25px;margin:20px 0 6px;transform:translateZ(25px)}.tech-tile p{color:var(--mute);font-size:12px;transform:translateZ(15px);margin-bottom:17px}
+.tech-badges{display:flex;flex-wrap:wrap;gap:8px;transform:translateZ(26px)}.tech-badges>span{font-size:12px;font-weight:700;letter-spacing:-.015em;border-radius:8px;border:1px solid var(--line);background:var(--paper);padding:7px 12px;box-shadow:0 4px 10px #071c2220}.tech-badges>span:nth-child(3n+1){border-color:color-mix(in srgb,var(--gold) 55%,var(--line))}.tech-badges .learning-badge{opacity:.75;font-weight:500}
+.tech-disclaimer{font-size:11px;color:var(--mute);line-height:1.8;margin-top:22px}
+/* CREW is shown as a neutral typographic concept, not a purported official company logo. */
+.project-image.crew-black-image{background:linear-gradient(135deg,#161b21,#090c10);color:#f9f4ec}.crew-black-image .crew-name{color:#fff}.crew-black-image .crew-mark{color:#dfba87}.crew-black-image .crew-brandmark small{color:#b8b7b4}
+.ui-arrow{display:inline-block;flex:0 0 18px;width:18px!important;height:18px!important;vertical-align:middle;fill:none!important;stroke:currentColor!important;stroke-width:1.9!important;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.site-header,.hero,.section,.intro-band,.story-gallery{max-width:100%}body{overflow-x:hidden}.projects-grid>*,.project-info,.skill-box{min-width:0}
+@media(max-width:1000px){.tech-scene-heading{max-width:56%}.tech-orbit{right:0;scale:.84}}
+@media(max-width:720px){
+ .tech-scene{height:auto;min-height:435px;display:block;border-radius:17px}
+ .tech-scene-heading{max-width:none;padding:27px 24px;gap:9px}.tech-scene-heading strong{font-size:30px}.tech-scene-sub{font-size:11px;max-width:95%}
+ .tech-orbit{left:50%;top:125px;right:auto;width:330px;height:260px;scale:.78;translate:-50% 0;transform:rotateX(12deg) rotateY(-12deg)}
+ .orbit-center{inset:64px 115px}.orbit-center b{font-size:43px}.orbit-ring{inset:23px 30px}.orbit-token{font-size:11px;padding:7px 10px}.orbit-token.o2{right:3%}.orbit-token.o6{right:2%}
+ .tech-intro-stats{bottom:16px;left:18px;right:18px;font-size:8px;letter-spacing:.06em}
+ .tech-categories{grid-template-columns:1fr;gap:12px;margin-top:14px}.tech-tile{padding:21px 18px;min-height:0;border-radius:13px;transform:none!important}.tech-tile h3{font-size:21px}.tech-badges{gap:6px}.tech-badges>span{font-size:11px;padding:7px 10px}
+ .hero h1{font-size:clamp(36px,9vw,52px);overflow-wrap:anywhere}.hero-side{min-width:0}.hero-actions{display:grid;grid-template-columns:1fr}.hero-actions .btn{width:100%}.site-header{max-width:100vw;padding-inline:14px}.wordmark>span:last-child{display:none}.about-aside{grid-template-columns:1fr 1fr}.project-info h3{overflow-wrap:anywhere}
+}
+@media(max-width:380px){.tech-orbit{scale:.68;top:137px}.tech-scene{min-height:420px}.photo-wrap{height:330px}.hero-side{padding-inline:17px}.hero-actions{gap:10px}.section,.story-gallery{padding-inline:16px}}
+@media(prefers-reduced-motion:reduce){.orbit-token{animation:none!important}.tech-orbit,.tech-tile{transition:none!important;transform:none!important}}

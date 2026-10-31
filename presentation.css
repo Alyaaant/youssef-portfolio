@@ -5,3 +5,22 @@
 /* v3 interview slides — brand marks, engineering work and personal method */
 .personal-brand-list{gap:12px;padding:18px}.personal-brand-list .stack-card{width:98%;padding:13px 17px;grid-template-columns:60px 1fr}.personal-brand-list .stack-card img{width:49px;height:49px;background:#f3faf9;border-radius:10px;padding:5px}.personal-brand-list .stack-card b{font-size:clamp(19px,2.1vw,30px)}.mini-project-logo{width:44px;height:44px;border:1px solid #d4ae72;border-radius:10px;display:grid;place-items:center;font:25px Georgia;color:#f4d5a0}.slide-demo-small{display:flex;align-items:center;gap:14px;font-size:12px;color:#dfebe7}.slide-demo-small img{width:60px;height:60px;padding:4px;background:white;border-radius:6px}.method-slide-steps{display:grid;gap:13px}.method-slide-steps span{padding:18px 24px;border:1px solid #fff5;background:#ffffff08;color:#c9af7c}.method-slide-steps b{font-size:26px;color:white;margin-left:14px}.visual-end .end-qr{margin:auto}.visual-end{padding:30px;gap:25px}.slide-portrait{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}.visual-name .name-initial,.visual-name>p{position:relative;z-index:1;text-shadow:0 5px 35px #000a}
 @media(max-width:560px){.personal-brand-list .stack-card{grid-template-columns:50px 1fr}.personal-brand-list .stack-card b{font-size:22px}.visual-end .end-qr img{width:90px;height:90px}.method-slide-steps span{padding:12px}.method-slide-steps b{font-size:18px}}
+
+
+/* v4 mobile presentation: true SVG arrows; no font-emoji substitutions. */
+.ui-arrow{display:block;width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.present-controls button{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;padding:0;touch-action:manipulation}
+.present-controls button .ui-arrow{width:22px;height:22px}.back{display:inline-flex;align-items:center;gap:7px}.back .ui-arrow{width:16px;height:16px}
+.presentation-tech-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.presentation-tech-chips span{font:700 11px 'DM Sans',sans-serif;padding:7px 9px;border:1px solid #d5b77e55;border-radius:8px;color:#f2d6ad;background:#ffffff0d;letter-spacing:0}
+.present-header,.deck,.slide{max-width:100%}body{overflow-x:hidden}.slide-copy,.slide-visual,.stack-card{min-width:0}
+@media(max-width:980px){.slide-layout{gap:18px}.slide-visual{max-height:none;height:auto;min-height:250px}.visual-projects{padding:17px}.presentation-tech-chips{margin-bottom:10px}}
+@media(max-width:560px){
+ .slide{padding:20px 15px 115px}.slide h1,.slide h2{font-size:clamp(30px,8.4vw,40px)}.slide-layout{grid-template-columns:minmax(0,1fr);gap:16px}
+ .slide-copy{min-width:0;overflow-wrap:anywhere}.slide-visual{min-height:205px}.present-controls{gap:15px}.present-footer{height:70px}
+ .stack-card{padding:12px 13px;grid-template-columns:42px minmax(0,1fr)}.stack-card b{font-size:clamp(20px,6vw,27px);overflow-wrap:anywhere}.stack-card small{font-size:8px;letter-spacing:.04em}
+ .personal-brand-list .stack-card{grid-template-columns:48px minmax(0,1fr);width:100%}.personal-brand-list .stack-card img{width:42px;height:42px}.personal-brand-list .stack-card b{font-size:21px}
+ .project-rows b{font-size:17px}.project-rows span{font-size:12px}.presentation-tech-chips span{font-size:10px;padding:6px 7px}
+ .visual-end{padding:14px;display:grid;grid-template-columns:minmax(0,1fr) 110px;gap:9px}.method-slide-steps span{padding:8px 6px}.method-slide-steps b{font-size:16px}.visual-end .end-qr{margin:0;padding:7px}.visual-end .end-qr img{width:95px;height:95px}
+ .slide-visual.visual-name{min-height:270px}.visual-name .name-initial{font-size:100px}.present-header{padding:0 12px}.present-head-actions button{min-height:38px}
+}
+@media(max-width:360px){.slide{padding-inline:11px}.slide h1,.slide h2{font-size:29px}.presentation-tech-chips span{font-size:9px}.present-controls{gap:8px}}
