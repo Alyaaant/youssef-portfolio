@@ -37,3 +37,11 @@ No home address, phone number, birth date, visa information, salary details or c
 ## Tech
 
 HTML, CSS, vanilla JavaScript, SVG placeholder illustrations, QR code images. Node.js server / Dockerfile included for optional hosting; GitHub Pages serves static files directly.
+
+
+## 2026-11-01 v3 update
+- Added project concept mark from user's Skolivio source, neutral placeholder NOOR wordmark, non-official CREW label and Pacific League project summary.
+- Extended professional skills by experience categories, methodology Think/Build/Verify.
+- Updated five-minute presentation slides to cover current professional work, personal products and technology.
+- Do not publish employer customer documents, production screenshots, private addresses or access credentials.
+- Photos and final master logos can be swapped in later without changing project URLs.

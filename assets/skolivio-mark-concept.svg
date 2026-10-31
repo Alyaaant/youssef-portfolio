@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 80 80" fill="none" role="img" aria-label="Skolivio brand concept symbol">
+<defs><linearGradient id="bookA" x1="8" y1="28" x2="39" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#14B8A6"/><stop offset="1" stop-color="#057CB3"/></linearGradient><linearGradient id="bookB" x1="40" y1="27" x2="75" y2="67" gradientUnits="userSpaceOnUse"><stop stop-color="#25C7D1"/><stop offset="1" stop-color="#0284C7"/></linearGradient></defs>
+<circle cx="40" cy="12" r="8" fill="#0B2D5B"/><circle cx="16" cy="23" r="7" fill="#14B8A6"/><circle cx="64" cy="23" r="7" fill="#0397CF"/>
+<path d="M23 33Q40 11 57 33" stroke="#126A94" stroke-width="6" stroke-linecap="round"/><path d="M7 34L12 38L12 64Q27 60 40 71Q53 60 68 64V38L73 34V68Q53 63 40 76Q27 63 7 68Z" fill="#0B2D5B"/>
+<path d="M10 30Q29 27 40 43V69Q27 56 10 59Z" fill="url(#bookA)"/><path d="M70 30Q51 27 40 43V69Q53 56 70 59Z" fill="url(#bookB)"/><path d="M13 61Q28 59 40 71Q52 59 67 61" stroke="#fff" stroke-opacity=".92" stroke-width="2.4" stroke-linecap="round"/></svg>

@@ -1,0 +1,23 @@
+import { readFileSync, existsSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+const root = resolve(import.meta.dirname,'..');
+let count=0;
+const assert=(cond,msg)=>{if(!cond)throw Error('CHECK FAILED: '+msg);console.log('✓ '+msg);count++};
+const page=readFileSync(resolve(root,'index.html'),'utf8');
+const slides=readFileSync(resolve(root,'presentation.html'),'utf8');
+const script=readFileSync(resolve(root,'app.js'),'utf8');
+assert(page.includes('パ・リーグ6球団のWeb関連システム'),'Professional 6-team experience is listed');
+assert(page.includes('CREW（クルー）｜社内Webアプリ'),'CREW project is listed');
+assert(page.includes('NOOR JAPAN')&&page.includes('Skolivio')&&page.includes('NILE QUEST'),'Independent products are present');
+assert(page.includes('考える。作る。確かめる。'),'User methodology is included');
+assert(page.includes('Spring Boot')&&page.includes('TypeScript')&&page.includes('WordPress')&&page.includes('PostgreSQL'),'Technology stack is included');
+const duration=[...slides.matchAll(/class="slide(?: active)?" data-duration="(\d+)"/g)].map(m=>Number(m[1]));
+assert(duration.length===5&&duration.reduce((a,b)=>a+b,0)===300,'Five-minute, five-slide presentation duration = 300 seconds');
+assert(slides.includes('CREW')&&slides.includes('PACIFIC LEAGUE')&&slides.includes('NOOR JAPAN'),'Slides include current work and projects');
+assert(script.includes('ye-lang')&&script.includes('ye-theme'),'Language and dark theme preferences retained');
+for(const path of ['assets/skolivio-mark-concept.svg','assets/noor-wordmark-placeholder.svg','assets/qr-portfolio.png','assets/qr-nile-quest.png','assets/favicon.svg','styles.css','presentation.css','app.js','presentation.js'])assert(existsSync(resolve(root,path)),`${path} is present`);
+const res=[...page.matchAll(/(?:src|href)="(assets\/[^"?]+)"/g),...slides.matchAll(/(?:src|href)="(assets\/[^"?]+)"/g)].map(x=>x[1]);
+for(const f of new Set(res)){if(f.endsWith('/profile.jpg'))continue; assert(existsSync(resolve(root,f)),`Asset link works: ${f}`)}
+const pii=/090-\d{4}-\d{4}|港北区仲手原|ニューライフ妙蓮寺|2030年\s*3月\s*17日/;
+assert(!pii.test(page)&&!pii.test(slides),'Private phone, address and visa expiry not published');
+console.log(`\n${count} static checks passed.`);
