@@ -25,6 +25,24 @@ themeBtn.addEventListener('click',()=>{theme=theme==='light'?'dark':'light';save
 
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduced){
+
+ // Decorative 3D hero. Disable pointer parallax when the user prefers reduced motion.
+ const heroArt=document.querySelector('.hero-visual');
+ if(heroArt){
+  heroArt.addEventListener('pointermove',e=>{
+   if(e.pointerType==='touch')return;
+   const r=heroArt.getBoundingClientRect();
+   const x=Math.max(-.5,Math.min(.5,(e.clientX-r.left)/r.width-.5));
+   const y=Math.max(-.5,Math.min(.5,(e.clientY-r.top)/r.height-.5));
+   heroArt.style.setProperty('--mouse-x',(x*5).toFixed(2)+'deg');
+   heroArt.style.setProperty('--mouse-y',(-y*4).toFixed(2)+'deg');
+  });
+  heroArt.addEventListener('pointerleave',()=>{
+   heroArt.style.setProperty('--mouse-x','0deg');
+   heroArt.style.setProperty('--mouse-y','0deg');
+  });
+ }
+
  document.querySelectorAll('.tech-tile').forEach(tile=>{
   tile.addEventListener('pointermove',e=>{
    if(e.pointerType==='touch')return;
