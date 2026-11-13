@@ -21,9 +21,7 @@ function apply(){
 }
 langBtn.addEventListener('click',()=>{lang=lang==='ja'?'en':'ja';save('ye-lang',lang);apply()});
 themeBtn.addEventListener('click',()=>{theme=theme==='light'?'dark':'light';save('ye-theme',theme);apply()});
-const photo=document.getElementById('profilePhoto');
-photo.addEventListener('load',()=>{if(photo.naturalWidth>0)document.querySelector('.photo-wrap').classList.add('has-photo')});
-photo.addEventListener('error',()=>{document.querySelector('.photo-wrap').classList.remove('has-photo')});
+
 
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if(!reduced){
