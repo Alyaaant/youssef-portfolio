@@ -95,8 +95,97 @@ html[data-theme='dark']{--bg:#10242b;--ink:#f6f2eb;--mute:#bac7c7;--line:#33535a
 @media(prefers-reduced-motion:reduce){.orbit-token{animation:none!important}.tech-orbit,.tech-tile{transition:none!important;transform:none!important}}
 
 
-/* no-photo portfolio layout, 2026-11-13 */
-.hero{display:block;min-height:auto!important;grid-template-columns:1fr!important}
-.hero-side{max-width:1120px;margin:0 auto;padding:clamp(65px,8vw,115px) max(5.7vw,30px) 75px!important}
-.hero-actions{margin-bottom:48px}
-@media(max-width:600px){.hero-side{padding:70px 24px 58px!important}}
+/* Photo-free hero — centered editorial layout (2026-11-13) */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  place-items: center;
+  width: 100%;
+  min-height: 0 !important;
+  padding: 0 24px;
+}
+.hero-side {
+  box-sizing: border-box;
+  width: min(100%, 1040px);
+  max-width: none;
+  margin-inline: auto;
+  padding: clamp(84px, 8vw, 118px) 24px 76px !important;
+  text-align: left;
+}
+.hero .eyebrow {
+  margin-bottom: 22px;
+}
+.hero h1 {
+  max-width: 100%;
+  margin: 0 0 29px;
+  font-size: clamp(52px, 5.25vw, 82px);
+  letter-spacing: -.055em;
+  line-height: 1.29;
+  overflow-wrap: normal;
+}
+.hero-lede {
+  width: 100%;
+  max-width: 670px;
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 2.05;
+}
+.hero-actions {
+  justify-content: flex-start;
+  gap: 14px;
+  margin: 35px 0 55px;
+}
+.hero-actions .btn {
+  min-width: 194px;
+}
+.hero-metrics {
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 730px;
+}
+@media (max-width: 720px) {
+  .hero {
+    display: block;
+    padding: 0 18px;
+  }
+  .hero-side {
+    width: 100%;
+    padding: 58px 0 54px !important;
+  }
+  .hero h1 {
+    font-size: clamp(35px, 8.4vw, 53px);
+    line-height: 1.36;
+    letter-spacing: -.065em;
+  }
+  .hero-lede {
+    font-size: 13px;
+    line-height: 2;
+  }
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 30px 0 40px;
+  }
+  .hero-actions .btn {
+    width: 100%;
+    min-width: 0;
+  }
+  .hero-metrics {
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .hero-metrics span {
+    padding-right: 10px;
+  }
+}
+@media (max-width: 380px) {
+  .hero {
+    padding-inline: 16px;
+  }
+  .hero h1 {
+    font-size: clamp(32px, 8.25vw, 38px);
+  }
+  .hero-metrics b {
+    font-size: 24px;
+  }
+}
